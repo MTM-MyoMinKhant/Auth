@@ -1,0 +1,24 @@
+<div class="center">
+    <div class="glass form">
+        <h1>Edit Info</h1>
+        <%= form_with model: @user, class: "center pad" do |form|  %>
+            <div>
+                <%= form.label :name , "User Name" %> <br>
+                <%= form.text_field :name %>
+                <% if @user.errors[:name].any? %>
+                    <div><%= @user.errors.full_messages_for(:name).first %></div>
+                <% end %>   
+            <div>
+            <div>
+                <%= form.label :age , "Age" %> <br>
+                <%= form.text_field :age %>
+                <% if @user.errors[:age].any? %>
+                    <div><%= @user.errors.full_messages_for(:age).first %></div>
+                <% end %>   
+            <div>
+            <div class="pad2">
+                <%= form.submit %>
+            </div>
+        <% end %>
+    </div>
+</div>

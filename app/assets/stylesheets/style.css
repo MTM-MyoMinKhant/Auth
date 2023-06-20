@@ -1,0 +1,42 @@
+body {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.form {
+    padding: 30px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.links {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.541);
+}
+
+.glass {
+    background: rgba(132, 121, 225, 0.50);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(132, 121, 225, 0.81);
+}
