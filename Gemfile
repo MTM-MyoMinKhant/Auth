@@ -33,6 +33,8 @@ gem 'devise', '~> 4.9', '>= 4.9.2'
 
 gem 'byebug', '~> 11.1', '>= 11.1.3'
 
+gem 'carrierwave', '~> 2.2', '>= 2.2.4'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
