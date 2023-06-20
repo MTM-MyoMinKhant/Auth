@@ -2,7 +2,11 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  private
 
+  def log_in_params
+    params.require(:user).permit(:email, :password)
+  end
   # GET /resource/sign_in
   # def new
   #   super

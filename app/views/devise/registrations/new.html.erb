@@ -43,6 +43,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+
+      <div class="field">
         <%= f.select :role, options_for_select([['User', 1], ['Admin', 0]]) %>
       </div>
     
