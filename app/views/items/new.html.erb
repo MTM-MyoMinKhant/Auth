@@ -1,0 +1,31 @@
+<div class="center">
+    <div class="glass form">
+        <h1>Create Random Item</h1>
+        <%= form_with model: @form, class: "center pad" do |form|  %>
+            <div>
+                <%= form.label :name , "Item Name" %> <br>
+                <%= form.text_field :name %>
+                <% if @form.errors[:name].any? %>
+                    <div><%= @form.errors.full_messages_for(:name).first %></div>
+                <% end %>                  
+            <div>
+            <div>
+                <%= form.label :description , "Item Description" %> <br>
+                <%= form.text_field :description %>
+                 <% if @form.errors[:description].any? %>
+                    <div><%= @form.errors.full_messages_for(:description).first %></div>
+                <% end %> 
+            <div>
+            <div>
+                <%= form.label :price , "Price" %> <br>
+                <%= form.text_field :price %>
+                 <% if @form.errors[:price].any? %>
+                    <div><%= @form.errors.full_messages_for(:price).first %></div>
+                <% end %>  
+            <div>
+            <div class="pad2">
+                <%= form.submit %>
+            </div>
+        <% end %>
+    </div>
+</div>

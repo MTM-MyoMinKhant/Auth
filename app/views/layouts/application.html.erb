@@ -14,12 +14,14 @@
 
   <body>
     <header class="clearfix">
-      <h2 class="h-r left">Auth</h2>
+      <h2 class="h-r left"><%= link_to "Auth", users_path, class: "logo " %></h2>
       <div class="right">
         <% if user_signed_in? %>
           <% if @user.role == 1 %>
             <%= link_to "Edit User", edit_user_path(@user.id), class: "btn" %>
           <% elsif @user.role == 0 %>
+            <%= link_to "Item Lists", items_path, class: "btn" %>
+            <%= link_to "Create Item", new_item_path, class: "btn" %>
             <%= link_to "Admin Info", admin_path(@user.id), class: "btn" %>
             <%= link_to "Edit Admin", edit_admin_path(@user.id), class: "btn" %>
           <% else %>

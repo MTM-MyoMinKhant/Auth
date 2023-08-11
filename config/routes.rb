@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root "users#index"
   resources :admin
   resources :users
+  resources :items
 end

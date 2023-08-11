@@ -2,24 +2,29 @@ class UsersController < ApplicationController
     def index
         @user = current_user
         if @user.role == 0
-            redirect_to controller: :admin, action: :index 
+            redirect_to admin_index_path
         end  
     end
 
     def edit
-        @user = User.find(params[:id])
+        # @user = User.find(params[:id])
+        @user = current_user
+        run User::Operation::Update::Present 
     end
 
     def update
-        @user = User.find(params[:id])
+        @result = run User::Operation::Update
         @track = current_user.role
-        if @user.update(user_params) && @track == 0
-            redirect_to admin_index_path
-        elsif @user.update(user_params) && @track == 1
-            redirect_to users_path
+
+        if @result.success?
+            if @track == 0
+                redirect_to admin_index_path
+            else
+                redirect_to users_path
+            end
         else
             render :edit, status: :unprocessable_entity
-        end  
+        end
     end
 
     private
