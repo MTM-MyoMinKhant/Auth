@@ -1,0 +1,20 @@
+.center 
+	.glass.form
+		h1 User Info
+		ul.list-group
+			li.list-group-item 
+				|Email :
+				= @user.email
+			li.list-group-item 
+				|Name :
+				= @user.name
+			li.list-group-item 
+				|Age : 
+				= @user.age	
+			li.list-group-item
+				-if @user.role==1
+					Role : User
+				-elsif @user.role == 0
+					Role : Admin
+				-else
+					Role : Role Undefined

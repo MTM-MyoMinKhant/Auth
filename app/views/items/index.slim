@@ -1,0 +1,22 @@
+h1 This is the Item lists
+
+table.table
+	thead
+		tr
+			th Id
+			th Item Name
+			th Item Description
+			th Price
+			th Image 
+				
+	tbody 
+		-@items.each do |item|
+			tr
+				th = item.id
+				td = item.name
+				td = item.description
+				td = item.price
+				td 
+					= image_tag item.avatar.to_s , class: "img"
+					
+

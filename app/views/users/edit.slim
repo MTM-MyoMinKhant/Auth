@@ -1,0 +1,19 @@
+.center 
+  .glass.form
+    h1 Edit Info
+    = form_with model: @form, class: "center pad" do |form|
+      .mb-3  
+        = form.label :name , "User Name"
+        = form.text_field :name
+        -if @form.errors[:name].any?
+          div
+            = @form.errors.full_messages_for(:name).first
+      
+      .mb-3 
+        = form.label :age , "Age"
+        = form.text_field :age
+        if @form.errors[:age].any?
+        = @form.errors.full_messages_for(:age).first
+
+      .mb-3.pad2
+        = form.submit

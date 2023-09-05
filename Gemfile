@@ -59,6 +59,7 @@ gem "trailblazer-loader"
 gem "trailblazer-cells"
 gem 'reform-rails', '~> 0.2.5'
 gem 'slim-rails', '~> 3.6', '>= 3.6.2'
+gem 'carrierwave', '~> 2.2', '>= 2.2.4'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

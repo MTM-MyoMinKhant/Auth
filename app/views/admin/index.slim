@@ -1,0 +1,23 @@
+h1 This is the Index for Admin
+
+table.table
+	thead
+		tr
+			th Id
+			th User Email
+			th User Name
+			th Age
+			th Role
+			th Action
+	tbody 
+		-@customers.each do |customer|
+			tr
+				th = customer.id
+				td = customer.email
+				td = customer.name
+				td = customer.age
+				td User
+				td 
+					= link_to "Edit", edit_user_path(customer.id) , class: "r-link left"
+					= button_to 'Delete', admin_path(customer.id), method: :delete,
+						data: { confirm: 'Are you sure you want to delete this author?'}, class: 'btn'

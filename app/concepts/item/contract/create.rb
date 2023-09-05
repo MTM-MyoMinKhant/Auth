@@ -4,6 +4,7 @@ module Item::Contract
     property :name
     property :description
     property :price
+    property :avatar
 
     validates :name, presence: true 
     validates :description, presence: true 

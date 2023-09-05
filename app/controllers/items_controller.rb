@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+  class ItemsController < ApplicationController
   def index
     @user = current_user
     run Item::Operation::Index do |item|
